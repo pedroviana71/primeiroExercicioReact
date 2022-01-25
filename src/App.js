@@ -1,5 +1,5 @@
 import React from "react";
-import Setup from "./olamundo.jsx/olamundo.js";
+import Setup from "./cores/cores.js";
 
 function App() {
   return (
