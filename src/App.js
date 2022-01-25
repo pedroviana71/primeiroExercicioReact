@@ -1,5 +1,7 @@
 import React from "react";
-import Setup from "./cores/cores.js";
+import Setup from "./pessoas/pessoas";
+
+
 
 function App() {
   return (

@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function Cores() {
+function UseCores() {
     
     const Azul = () => {
         setTxt("Azul")
@@ -13,14 +13,15 @@ function Cores() {
     const Rosa = () => {
         setTxt("Rosa")
     }
+    
     const [txt, setTxt] = useState("")
 
     return <React.Fragment>
-        <div>
+        <div className="container">
             <div className="buttons">
-                <button className="btn" onClick={Azul}>Azul</button>
-                <button className="btn" onClick={Verde}>Verde</button>
-                <button className="btn" onClick={Rosa}>Rosa</button>
+                <button id="azul" className="btn" onClick={Azul}>Azul</button>
+                <button id="verde" className="btn" onClick={Verde}>Verde</button>
+                <button id="rosa" className="btn" onClick={Rosa}>Rosa</button>
             </div>
             <div className="txt">
                <h1>A cor escolhida foi: {txt}</h1>
@@ -30,4 +31,4 @@ function Cores() {
 }
 
 
-export default Cores;
+export default UseCores;
