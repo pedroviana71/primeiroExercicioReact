@@ -3,8 +3,8 @@ import React, { useState } from "react";
 const UsePalavras = () => {
     const [txt, setTxt] = useState('Digite algo ^')
 
-    const Texto = () =>{
-        setTxt(document.getElementById('txtarea').value)
+    const Texto = (event) =>{
+        setTxt(event.target.value)
     }
     return(
         <>
