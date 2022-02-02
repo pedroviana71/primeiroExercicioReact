@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-function UseCores() {
+function Cores() {
     
     const Azul = () => {
         setTxt("Azul")
@@ -30,6 +30,6 @@ function UseCores() {
     </React.Fragment>
 }
 
-export default UseCores;
+export default Cores;
 
 

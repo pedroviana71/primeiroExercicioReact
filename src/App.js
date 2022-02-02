@@ -1,5 +1,6 @@
 import React from "react";
-import Setup from "./acoes/acoes";
+//import Setup from "./acoes/acoes";
+import Setup from "./cores/cores";
 //import Setup from "./acoes/exemploImmer";
 
 

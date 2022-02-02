@@ -28,7 +28,7 @@ const data = [
   },
 ];
 
-const UsePessoas = () => {
+const Pessoas = () => {
   const [people, setPeople] = React.useState(data);
 
   return (
@@ -46,4 +46,4 @@ const UsePessoas = () => {
   );
 };
 
-export default UsePessoas;
+export default Pessoas;

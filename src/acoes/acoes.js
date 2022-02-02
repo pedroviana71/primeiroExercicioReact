@@ -70,16 +70,18 @@ const Stocks = () => {
     <>
       <div className="container">
         <div className="inner-container">
-          <h1 className="title">Valor de ações</h1>
-          <h3 className="subtitle">Digite o código da empresa:</h3>
-          <input
-            className="input"
-            value={stock}
-            type="text"
-            onChange={updateInput}
-            onKeyDown={handleStock}
-            autoFocus
-          />
+          <div className="container-top">
+            <h1 className="title">Valor de ações</h1>
+            <h3 className="subtitle">Digite o código da empresa:</h3>
+            <input
+              className="input"
+              value={stock}
+              type="text"
+              onChange={updateInput}
+              onKeyDown={handleStock}
+              autoFocus
+            />
+          </div>
           <div className="container-answer">
             {isShow ? <h1 className="company-result">{company}</h1> : null}
             {isShow ? <h1 className="price-result">{`U$${price}`}</h1> : null}
