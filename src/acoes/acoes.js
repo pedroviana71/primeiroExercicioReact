@@ -24,8 +24,7 @@ const Stocks = () => {
   //função para pegar o valor do input
   const handleStock = (event) => {
     if (event.key === "Enter") {
-      dados();
-      console.log(data);
+      dados();      
     } else if (event.key === "Backspace") {
       setIsShow(false);
     } else {
@@ -36,7 +35,7 @@ const Stocks = () => {
   const updateInput = (event) => {
     setStock(event.target.value);
   };
-
+  
   //URL para usar na função da pegar os dados da API
   //const url = `https://cloud.iexapis.com/stable/stock/${stock}/quote?token=pk_b5e0e271d2544ee0ac8274f564b85117`;
 
