@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useImmer } from "use-immer";
 import id from "./id";
-import "./acoes.css";
+import styles from "./acoes.module.css";
 
 const Stocks = () => {
   //useStates para fazer a captura do nome e valores das acoes
@@ -24,7 +24,7 @@ const Stocks = () => {
   //função para pegar o valor do input
   const handleStock = (event) => {
     if (event.key === "Enter") {
-      dados();      
+      dados();
     } else if (event.key === "Backspace") {
       setIsShow(false);
     } else {
@@ -35,7 +35,7 @@ const Stocks = () => {
   const updateInput = (event) => {
     setStock(event.target.value);
   };
-  
+
   //URL para usar na função da pegar os dados da API
   //const url = `https://cloud.iexapis.com/stable/stock/${stock}/quote?token=pk_b5e0e271d2544ee0ac8274f564b85117`;
 
@@ -67,13 +67,13 @@ const Stocks = () => {
 
   return (
     <>
-      <div className="container">
-        <div className="inner-container">
-          <div className="container-top">
-            <h1 className="title">Valor de ações</h1>
-            <h3 className="subtitle">Digite o código da empresa:</h3>
+      <div className={styles.container}>
+        <div className={styles.inner_container}>
+          <div className={styles.container_top}>
+            <h1 className={styles.title}>Valor de ações</h1>
+            <h3 className={styles.subtitle}>Digite o código da empresa:</h3>
             <input
-              className="input"
+              className={styles.input}
               value={stock}
               type="text"
               onChange={updateInput}
@@ -81,22 +81,25 @@ const Stocks = () => {
               autoFocus
             />
           </div>
-          <div className="container-answer">
-            {isShow ? <h1 className="company-result">{company}</h1> : null}
-            {isShow ? <h1 className="price-result">{`U$${price}`}</h1> : null}
+          <div className={styles.container_answer}>
+            {isShow ? (
+              <h1 className={styles.company_result}>{company}</h1>
+            ) : null}
+            {isShow ? (
+              <h1 className={styles.price_result}>{`U$${price}`}</h1>
+            ) : null}
           </div>
 
-          <div className="result-save">
+          <div className={styles.result_save}>
             {data.map((value) => {
               return (
-                <div className="container-result" key={value.id}>
-                  <p className="name">{value.company}</p>
-                  <p className="price">{value.price}</p>
+                <div className={styles.container_result} key={value.id}>
+                  <p className={styles.name}>{value.company}</p>
+                  <p className={styles.price}>{value.price}</p>
                 </div>
               );
             })}
           </div>
-
         </div>
       </div>
     </>
