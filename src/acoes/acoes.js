@@ -21,6 +21,7 @@ const Stocks = () => {
       });
     });
   };
+  
   //função para pegar o valor do input
   const handleStock = (event) => {
     if (event.key === "Enter") {

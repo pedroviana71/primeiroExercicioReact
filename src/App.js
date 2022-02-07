@@ -1,5 +1,5 @@
 import React from "react";
-import Setup from "./toDo/toDo";
+import Setup from "./cadastro/cadastro";
 // import Setup from "./acoes/acoes";
 
 
