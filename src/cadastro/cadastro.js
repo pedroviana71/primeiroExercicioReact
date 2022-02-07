@@ -56,8 +56,7 @@ const Form = () => {
 
   //HANDLE USER SUBMIT CLICK
   const handleSubmit = (e) => {
-    e.preventDefault();   
-    
+    e.preventDefault();
     setIsShow(true);
     if (
       password !== secondPassword ||
