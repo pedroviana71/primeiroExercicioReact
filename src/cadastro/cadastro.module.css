@@ -33,8 +33,10 @@
 
 .btn{
     width: 80%;
-    height: 18px;
+    height: 25px;
     background-color: rgb(153, 179, 201);
     border: 0;
     border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
 }

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import styles from "./cadastro.module.css";
 import moment from "moment";
 
-
 const Form = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -20,7 +19,7 @@ const Form = () => {
   const valueLastName = (e) => setLastName(e.target.value);
   const valueBirthdayDate = (e) => {
     setBirthdayDate(maskDate(e.target.value));
-    setAge(calcAge());
+    setAge(calcAge(e.target.value));
   };
   const valueGender = (e) => setGender(e.target.value);
   const valueEmail = (e) => setEmail(e.target.value);
@@ -29,13 +28,9 @@ const Form = () => {
   const valueJob = (e) => setJob(e.target.value);
 
   //AGE FUNCTION
-  function calcAge() {
-    const day = birthdayDate.slice(0, 2);
-    const month = birthdayDate.slice(3, 5);
-    const year = birthdayDate.slice(6, 10);
-    const fulldate = day + month + year;
-    if (fulldate.length >= 8) {
-      const years = moment(fulldate, "DDMMYYYY").fromNow().slice(0, 2);
+  function calcAge(date) {
+    if (date.length >= 10) {
+      const years = moment(date, "DD/MM/YYYY").fromNow().slice(0, 2);
       var resultAge = parseInt(years);
       return resultAge;
     }
@@ -49,67 +44,35 @@ const Form = () => {
       .replace(/(\d{4})(\d)/, "$1");
   };
 
-  useEffect(()=>{
-    console.log("teste");
-    setAge(calcAge())
-  },)
-
   //HANDLE USER SUBMIT CLICK
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsShow(true);
-    if (
-      password !== secondPassword ||
-      !birthdayDate ||
-      firstName.length < 4 ||
-      lastName.length < 4 ||
-      email.length < 4
-    ) {
-      if (password !== secondPassword) {
-        var check = "As senhas são diferentes";
-      } else {
-        check = "";
-      }
-
-      if (!birthdayDate) {
-        var date = "Digite uma data";
-      } else {
-        date = "";
-      }
-
-      if (firstName.length < 4) {
-        var nameTest = "Nome precisa de pelo menos 4 caracteres";
-      } else {
-        nameTest = "";
-      }
-
-      if (lastName.length < 4) {
-        var lastNameTest = "Sobrenome precisa de pelo menos 4 caracteres";
-      } else {
-        lastNameTest = "";
-      }
-
-      if (email.length < 4) {
-        var emailTest = "Email precisa de pelo menos 4 caracteres";
-      } else {
-        emailTest = "";
-      }
-
-      alert(
-        "Corrija: " +
-          "\n" +
-          check +
-          "\n" +
-          date +
-          "\n" +
-          nameTest +
-          "\n" +
-          lastNameTest +
-          "\n" +
-          emailTest
-      );
+    let list = [];
+    if (password !== secondPassword) {
+      list.push("As senhas são diferentes");
     }
+
+    if (!birthdayDate) {
+      list.push("Digite uma data");
+    }
+
+    if (firstName.length < 4) {
+      list.push("Nome precisa de pelo menos 4 caracteres");
+    }
+
+    if (lastName.length < 4) {
+      list.push("Sobrenome precisa de pelo menos 4 caracteres");
+    }
+
+    if (email.length < 4) {
+      list.push("Email precisa de pelo menos 4 caracteres");
+    }
+    
+    alert(list.join("\n"))   
+    
   };
+  
 
   return (
     <>
@@ -209,7 +172,9 @@ const Form = () => {
               onChange={valueSecondPassword}
             />
           </div>
-          <button className={styles.btn} type="submit">Enviar</button>
+          <button className={styles.btn} type="submit">
+            Enviar
+          </button>
         </form>
         {isShow ? (
           <div>

@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+  padding: 50px 10px 0px 10px;
+  margin-bottom: 100px;
+}
+
+.innerContainer {
+  display: grid;
+  grid-template-columns: max-content;
+  width: 350px;
+  height: 200px;
+}
+
+.image {
+  width: 300px;
+  height: 150px;
+}
+
+.name {
+}
+
+.description {
+  width: 300px;
+}
