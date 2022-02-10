@@ -1,31 +1,30 @@
 import React, { useState } from "react";
 import CarouselSlider from "react-carousel-slider";
 import Desc from "../descricao/descricao"
+import Nevoeiro from "../image/DSC_0367.jpg";
+import Coruja1 from "../image/DSC_0397.jpg"
+import Coruja2 from "../image/DSC_0409.jpg"
+import Arvore from "../image/DSC_0326.jpg";
 
-
-const Carousel = () => {
-
-  const [firstLink, setFirstLink] = useState("./image/DSC_0367.jpg");
-  const [input, setInput] = useState('')
-
+const Carousel = () => {  
   
   let data = [
     {
       des: "Coruja",
-      imgSrc: "../image/DSC_0397.jpg",
+      imgSrc: Coruja1,
     },
     {
       des: "Árvore",
-      imgSrc: "../image/DSC_0326.jpg",
+      imgSrc: Arvore,
     },
     {
       des: "Coruja",
-      imgSrc: "../image/DSC_0409.jpg",
+      imgSrc: Coruja2,
     },
     {
       des: "Nevoeiro",
       imgSrc:
-        "https://i.pinimg.com/564x/e2/db/2b/e2db2b820d547612ea213171d237656f.jpg",
+        Nevoeiro,
     },
   ];
 

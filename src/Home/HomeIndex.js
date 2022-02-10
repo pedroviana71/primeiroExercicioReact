@@ -20,11 +20,7 @@ const Home = () => {
         })}
       
       </div>
-      <div>
-        <h4>Experimente também: </h4>
-        <p>Colocar na barra de navegação: "/verde/mochila" </p>
-        <p></p>
-      </div>
+      
     </div>
   );
 };

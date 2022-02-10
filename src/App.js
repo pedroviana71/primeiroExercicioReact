@@ -10,17 +10,17 @@ import Carousel from "./importar/index";
 import Home from "./Home/HomeIndex.js";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Header from "./Header/Header";
-import Mochila from "./caminho/caminho"
+import URL from "./url/url";
 
 function App() {
   return (
     <BrowserRouter>
-      <div>
-        <Header />
-      </div>
-
       <Routes>
-        <Route exact path="/" element={<Home />} />
+
+        <Route element={<Header />}>
+
+
+        <Route path="/" element={<Home />} />
         <Route path="acoes" element={<Acoes />} />
         <Route path="cadastro" element={<Cadastro />} />
         <Route path="cores" element={<Cores />} />
@@ -33,14 +33,15 @@ function App() {
           path="*"
           element={
             <main style={{ padding: "1rem" }}>
-              <p>Não tem nada aqui!
-                Clique para voltar para a <Link to="/">Home</Link>
+              <p>
+                Não tem nada aqui! Clique para voltar para a{" "}
+                <Link to="/">Home</Link>
               </p>
-              
             </main>
           }
         />
-        <Route path="verde/mochila" element={<Mochila/>}></Route>
+        <Route path="url/:color/:text" element={<URL />}></Route>
+        </Route>
       </Routes>
     </BrowserRouter>
   );
